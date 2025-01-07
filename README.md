@@ -1,70 +1,179 @@
-# Getting Started with Create React App
+# Interactive Text and PDF Manipulator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An advanced React-based web application that allows users to manipulate text and PDF content with interactive features like highlighting, dragging, and spacing adjustments.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+### Text Manipulation
+- **Dynamic Text Highlighting**: Click to highlight specific lines of text
+- **Drag and Drop**: Move text lines freely within the container
+- **Spacing Control**: Adjust text spacing using Ctrl/Cmd + Mouse wheel
+- **Interactive UI**: Smooth animations and visual feedback
 
-### `npm start`
+### PDF Support
+- **PDF Upload**: Support for uploading and viewing PDF files
+- **Text Extraction**: Automatically extracts text content from PDF files
+- **Page Navigation**: Browse through multiple PDF pages
+- **Consistent Experience**: Same manipulation features available for PDF content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js
+- **PDF Processing**: PDF.js
+- **Styling**: CSS3 with custom animations
+- **State Management**: React Hooks (useState, useEffect, useRef)
+- **File Handling**: Native File API
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+### Deployed Link
+https://intern-project-three-plum.vercel.app/
+### Installation
 
-### `npm run build`
+1. Clone the repository:
+```bash
+git clone https://github.com/prajwal9773/intern-project.git
+cd intern-project
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+```bash
+cd client
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application will be available at `http://localhost:3000`
 
-### `npm run eject`
+## 💡 Usage Guide
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Basic Text Manipulation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Highlighting Text**:
+   - Click the "Start Highlighting" button
+   - Click on any text line to highlight it
+   - Click again to remove the highlight
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Moving Text**:
+   - Click and drag highlighted text to move it
+   - If no text is highlighted, all text moves together
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Adjusting Spacing**:
+   - Hold Ctrl/Cmd key
+   - Use mouse wheel to adjust spacing between lines
 
-## Learn More
+### Working with PDFs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Upload a PDF**:
+   - Click the "Upload PDF" button
+   - Select a PDF file from your computer
+   - Wait for the file to load and process
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Navigate PDF Pages**:
+   - Use "Previous Page" and "Next Page" buttons
+   - Current page number and total pages are displayed
+   - Text manipulation features work on each page
 
-### Code Splitting
+3. **Text Extraction**:
+   - Text is automatically extracted from PDF
+   - Maintains formatting and structure
+   - Ready for manipulation like regular text
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🏗️ Project Structure
 
-### Analyzing the Bundle Size
+```
+intern-project/
+├── client/
+│   ├── public/
+│   │   ├── index.html
+│   │   └── pdf.worker.min.js
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── TextManipulator.js
+│   │   │   └── TextManipulator.css
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔧 Key Components
 
-### Making a Progressive Web App
+### TextManipulator.js
+The main component handling all text and PDF manipulation features:
+- State management for text lines and highlights
+- PDF processing and text extraction
+- Event handlers for user interactions
+- Page navigation logic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### TextManipulator.css
+Styles and animations for the application:
+- Responsive layout
+- Interactive animations
+- Visual feedback
+- Custom scrollbar styling
 
-### Advanced Configuration
+## 🎨 Styling and UI/UX
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Modern Interface**: Clean and intuitive design
+- **Visual Feedback**: Hover effects and transitions
+- **Responsive Layout**: Adapts to different screen sizes
+- **Accessibility**: Clear visual indicators and states
 
-### Deployment
+## ⚙️ Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application can be configured through environment variables:
+- Port settings
+- PDF worker configuration
+- Build options
 
-### `npm run build` fails to minify
+## 🔍 Technical Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### PDF Processing
+- Uses PDF.js for parsing and rendering
+- Extracts text while maintaining structure
+- Handles multi-page documents
+- Efficient memory management
+
+### State Management
+- Uses React's useState for component state
+- useRef for DOM references
+- useEffect for side effects and lifecycle management
+
+### Event Handling
+- Mouse events for dragging
+- Wheel events for spacing
+- File input events for PDF upload
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- PDF.js team for the excellent PDF processing library
+- React team for the framework
+- Contributors and testers
+
+## 📞 Support
+
+For support, please open an issue in the GitHub repository or contact the maintainers.
+
+---
+
+Made with ❤️ by Prajwal Kumar
